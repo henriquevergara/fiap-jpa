@@ -6,17 +6,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Teste {
+public class TesteRemocao {
+
+
     public static void main(String[] args) {
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("fiap");
         EntityManager em = emf.createEntityManager();
 
-
-        Cliente cliente = new Cliente();
-        cliente.setNome("Joao");
+        Cliente clienteEncontrado = em.find(Cliente.class,1);
+        em.remove(clienteEncontrado);
 
         try {
-            em.persist(cliente);
             em.getTransaction().begin();
             em.getTransaction().commit();
         }catch (Exception e){
@@ -24,8 +25,11 @@ public class Teste {
                 em.getTransaction().rollback();
             }
         }
-
         em.close();
         emf.close();
+
+
     }
+
+
 }
