@@ -12,7 +12,7 @@
       <class>br.com.fiap.entity.TipoEstabelecimento</class>
     <properties>
             <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
